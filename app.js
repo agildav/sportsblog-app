@@ -7,7 +7,10 @@ const session = require("express-session");
 
 //  === Router ===
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const articlesRouter = require("./routes/articles");
+const categoriesRouter = require("./routes/categories");
+const manageRouter = require("./routes/manage");
+
 //  ===        ===
 const app = express();
 
@@ -23,7 +26,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //  === Routes ===
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/articles", articlesRouter);
+app.use("/categories", categoriesRouter);
+app.use("/manage", manageRouter);
 //  ===        ===
 
 //  Express-messages
