@@ -13,7 +13,7 @@ router.get("/articles/add", function(req, res, next) {
 
 /* GET add_category page. */
 router.get("/categories/add", function(req, res, next) {
-  res.render("add_category", { title: "Create category" });
+  res.render("add_category", { title: "Create categories" });
 });
 
 module.exports = router;
