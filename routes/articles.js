@@ -12,7 +12,7 @@ router.get("/show/:id", function(req, res, next) {
 });
 
 /* GET category articles. */
-router.get("/category/:category:id", function(req, res, next) {
+router.get("/category/:category_id", function(req, res, next) {
   res.render("articles", { title: "Category articles" });
 });
 
