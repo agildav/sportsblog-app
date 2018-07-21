@@ -4,6 +4,15 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const session = require("express-session");
+const mongoose = require("mongoose");
+
+//  Mongoose setup
+const mongoURL = "mongodb://localhost:27017/sports-blog";
+mongoose.connect(
+  mongoURL,
+  { useNewUrlParser: true }
+);
+const db = mongoose.connection;
 
 //  === Router ===
 const indexRouter = require("./routes/index");
