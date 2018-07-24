@@ -35,7 +35,15 @@ router.get("/categories/add", (req, res, next) => {
 
 /* GET edit_category page. */
 router.get("/categories/edit/:id", (req, res, next) => {
-  res.render("manage/edit_category", { title: "Edit category" });
+  let category_id = req.params.id;
+
+  Categories.findCategoryById(category_id, (err, category) => {
+    if (err) console.log(err);
+    res.render("manage/edit_category", {
+      title: "Edit category",
+      category
+    });
+  });
 });
 
 module.exports = router;

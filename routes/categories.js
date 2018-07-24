@@ -21,4 +21,19 @@ router.post("/add", (req, res, next) => {
   });
 });
 
+/* POST edit_category page. */
+router.post("/edit/:id", (req, res, next) => {
+  let category_id = { _id: req.params.id };
+  let updateCategory = {
+    title: req.body.title,
+    description: req.body.description
+  };
+
+  Categories.editCategory(category_id, updateCategory, {}, (err, category) => {
+    if (err) console.log(err);
+    console.log("Category edited");
+    res.redirect("/manage/categories");
+  });
+});
+
 module.exports = router;

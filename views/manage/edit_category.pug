@@ -4,3 +4,14 @@ block content
   .container
     h1= title
     br
+    form(action=`/categories/edit/${category._id}`, method='post')
+      .form-group
+        label Category title
+        input#category-title.form-control(required='', type='text', name='title', value=`${category.title}`)
+      .form-group
+        label Category description
+        textarea#category-title.form-control(required='', name='description') #{category.description}
+      br
+      button.btn.btn-primary(type='submit') Submit
+      a.btn.btn-danger(href='/manage/categories') Cancel
+
