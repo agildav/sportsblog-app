@@ -6,7 +6,7 @@ const Categories = require("../models/category");
 router.get("/", (req, res, next) => {
   Categories.getCategories((err, categories) => {
     if (err) console.log(err);
-    res.render("categories", { title: "Categories", categories });
+    res.render("categories/categories", { title: "Categories", categories });
   });
 });
 
