@@ -7,11 +7,14 @@ const categorySchema = mongoose.Schema({
 });
 
 //  Compile schema into model and export it
-const Category = (module.exports = mongoose.model("Category", categorySchema));
+const Categories = (module.exports = mongoose.model(
+  "Category",
+  categorySchema
+));
 
-//  Category.getCategories function
+//  getCategories query
 module.exports.getCategories = function(callback, limit) {
-  Category.find(callback)
+  Categories.find(callback)
     .limit(limit)
     .sort([["title", "ascending"]]);
 };
