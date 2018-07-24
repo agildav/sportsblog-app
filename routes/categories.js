@@ -12,4 +12,15 @@ router.get("/", (req, res, next) => {
   });
 });
 
+/* POST new categories. */
+router.post("/add", (req, res, next) => {
+  let category = req.body;
+  Categories.addCategories(category, (err, categories) => {
+    if (err) res.send(err);
+
+    console.log("Category added");
+    res.redirect("/manage/categories");
+  });
+});
+
 module.exports = router;
