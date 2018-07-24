@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Categories = require("../models/category");
 
 /* GET manage articles page. */
 router.get("/articles", (req, res, next) => {
@@ -8,7 +9,10 @@ router.get("/articles", (req, res, next) => {
 
 /* GET manage categories page. */
 router.get("/categories", (req, res, next) => {
-  res.render("manage_categories", { title: "Manage categories" });
+  Categories.getCategories((err, categories) => {
+    if (err) console.log(err);
+    res.render("manage_categories", { title: "Manage categories", categories });
+  });
 });
 
 /* GET add_articles page. */

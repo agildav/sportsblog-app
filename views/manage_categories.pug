@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    h1= title
+    br
+    table.table.table-hover
+      thead.thead-dark
+        tr
+          th(scope='col') #
+          th(scope='col') Category
+          th(scope='col') Description
+          th
+      tbody
+        each category, i in categories
+          tr
+            th(scope='row') #{i + 1}
+            td #{category.title}
+            td #{category.description}
+            td
+              a(href=`/manage/categories/edit/${category._id}` class='btn btn-secondary') Edit
+
