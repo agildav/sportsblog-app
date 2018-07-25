@@ -37,4 +37,8 @@ button {
   body {
     padding: 70px;
   }
+
+  .float-r {
+    float: right !important;
+  }
 }
