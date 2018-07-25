@@ -30,11 +30,16 @@ module.exports.addCategories = function(category, callback) {
 };
 
 //  editCategory method
-module.exports.editCategory = function(
+module.exports.editCategories = function(
   category,
   updateCategory,
   options,
   callback
 ) {
   Categories.findOneAndUpdate(category, updateCategory, options, callback);
+};
+
+//  deleteCategories method
+module.exports.deleteCategories = function(category, callback) {
+  Categories.remove(category, callback);
 };

@@ -1,17 +1,16 @@
 extends ../layout
 
 block content
-  .container
-    h1= title
+  h1= title
+  br
+  form(action='/categories/add', method='post')
+    .form-group
+      label Category title
+      input#category-title.form-control(required='', type='text', name='title')
+    .form-group
+      label Category description
+      textarea#category-title.form-control(required='', name='description')
     br
-    form(action='/categories/add', method='post')
-      .form-group
-        label Category title
-        input#category-title.form-control(required='', type='text', name='title')
-      .form-group
-        label Category description
-        textarea#category-title.form-control(required='', name='description')
-      br
-      button.btn.btn-primary(type='submit') Submit
-      a.btn.btn-danger(href='/manage/categories') Cancel
+    button.btn.btn-primary(type='submit') Submit
+    a.btn.btn-outline-secondary(href='/manage/categories') Cancel
 

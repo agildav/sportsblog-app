@@ -1,22 +1,25 @@
 extends ../layout
 
 block content
-  .container
-    h1= title
-    br
-    table.table.table-hover
-      thead.thead-dark
+  .row
+    .col-md-9
+      h1= title
+    .col-md-3
+      a(href=`/manage/categories/add` class='btn btn-primary btn-add') Add category
+  br
+  table.table.table-hover
+    thead.thead-dark
+      tr
+        th(scope='col') #
+        th(scope='col') Category
+        th(scope='col') Description
+        th
+    tbody
+      each category, i in categories
         tr
-          th(scope='col') #
-          th(scope='col') Category
-          th(scope='col') Description
-          th
-      tbody
-        each category, i in categories
-          tr
-            th(scope='row') #{i + 1}
-            td #{category.title}
-            td #{category.description}
-            td
-              a(href=`/manage/categories/edit/${category._id}` class='btn btn-secondary') Edit
+          th(scope='row') #{i + 1}
+          td #{category.title}
+          td #{category.description}
+          td
+            a(href=`/manage/categories/edit/${category._id}` class='btn btn-secondary') Edit
 

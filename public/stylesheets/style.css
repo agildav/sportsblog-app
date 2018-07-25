@@ -1,6 +1,5 @@
 body {
-  padding: 50px;
-  font-size: larger;
+  font-size: large;
 }
 
 a {
@@ -9,4 +8,33 @@ a {
 
 button {
   margin-right: 3px;
+}
+
+.btn-add {
+  margin-top: 10px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 25px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 70px;
+  }
 }

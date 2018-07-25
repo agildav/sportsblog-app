@@ -19,7 +19,7 @@ router.post("/add", (req, res, next) => {
   });
 });
 
-/* POST edit_category page. */
+/* POST edit category */
 router.post("/edit/:id", (req, res, next) => {
   let category_id = { _id: req.params.id };
   let updateCategory = {
@@ -27,9 +27,24 @@ router.post("/edit/:id", (req, res, next) => {
     description: req.body.description
   };
 
-  Categories.editCategory(category_id, updateCategory, {}, (err, category) => {
+  Categories.editCategories(
+    category_id,
+    updateCategory,
+    {},
+    (err, category) => {
+      if (err) console.log(err);
+      res.redirect("/manage/categories");
+    }
+  );
+});
+
+/* DELETE remove a category */
+router.delete("/delete/:id", (req, res, next) => {
+  let category_id = { _id: req.params.id };
+
+  Categories.deleteCategories(category_id, (err, category) => {
     if (err) console.log(err);
-    res.redirect("/manage/categories");
+    res.sendStatus(200);
   });
 });
 
