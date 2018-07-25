@@ -1,8 +1,12 @@
 body {
   padding: 50px;
-  font-size: larger
+  font-size: larger;
 }
 
 a {
   color: #00b7ff;
+}
+
+button {
+  margin-right: 3px;
 }

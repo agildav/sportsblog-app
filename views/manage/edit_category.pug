@@ -13,5 +13,6 @@ block content
         textarea#category-title.form-control(required='', name='description') #{category.description}
       br
       button.btn.btn-primary(type='submit') Submit
-      a.btn.btn-danger(href='/manage/categories') Cancel
+      a.btn.btn-outline-secondary(href='/manage/categories') Cancel
+      a.btn.btn-danger.float-right(href='/manage/categories', data-category-id=category._id) Delete
 
