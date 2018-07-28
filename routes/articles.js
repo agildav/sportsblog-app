@@ -1,9 +1,22 @@
 const express = require("express");
 const router = express.Router();
+const Articles = require("../models/article");
 
 /* GET articles. */
 router.get("/", (req, res, next) => {
-  res.render("articles/articles", { title: "Articles" });
+  Articles.getArticles((err, articles) => {
+    if (err) console.log(err);
+    res.render("articles/articles", { title: "Articles", articles });
+  });
+});
+
+/* POST new articles. */
+router.post("/add", (req, res, next) => {
+  let article = req.body;
+  Articles.addArticles(article, (err, articles) => {
+    if (err) res.send(err);
+    res.redirect("/manage/articles");
+  });
 });
 
 /* GET article. */

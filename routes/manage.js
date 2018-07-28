@@ -20,7 +20,10 @@ router.get("/categories", (req, res, next) => {
 
 /* GET add_articles page. */
 router.get("/articles/add", (req, res, next) => {
-  res.render("manage/add_articles", { title: "Create articles" });
+  Categories.getCategories((err, categories) => {
+    if (err) console.log(err);
+    res.render("manage/add_article", { title: "Create articles", categories });
+  });
 });
 
 /* GET edit_article page. */
