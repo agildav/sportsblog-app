@@ -1,10 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Categories = require("../models/category");
+const Articles = require("../models/article");
 
 /* GET manage articles page. */
 router.get("/articles", (req, res, next) => {
-  res.render("manage/manage_articles", { title: "Manage articles" });
+  Articles.getArticles((err, articles) => {
+    if (err) console.log(err);
+    res.render("manage/manage_articles", {
+      title: "Manage articles",
+      articles
+    });
+  });
 });
 
 /* GET manage categories page. */

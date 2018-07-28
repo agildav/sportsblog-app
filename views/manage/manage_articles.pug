@@ -1,5 +1,23 @@
 extends ../layout
 
 block content
-  h1= title
+  .row
+    .col-md-7
+      h1= title
+    .col-md-5
+      a(href=`/manage/articles/add` class='btn btn-primary btn-add float-r') Add article
   br
+  table.table.table-hover.table-borderless
+    thead.thead-dark
+      tr
+        th(scope='col') #
+        th(scope='col') Article
+        th
+    tbody
+      each article, i in articles
+        tr
+          th(scope='row') #{i + 1}
+          td #{article.title}
+          td
+            a(href=`/manage/articles/edit/${article._id}` class='btn btn-secondary float-right') Edit
+
