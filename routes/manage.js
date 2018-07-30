@@ -35,7 +35,19 @@ router.get("/articles/add", (req, res, next) => {
 
 /* GET edit_article page. */
 router.get("/articles/edit/:id", (req, res, next) => {
-  res.render("manage/edit_article", { title: "Edit articles" });
+  let article_id = req.params.id;
+
+  Articles.findArticleById(article_id, (err, article) => {
+    if (err) console.log(err);
+    Categories.getCategories((err, categories) => {
+      if (err) console.log(err);
+      res.render("manage/edit_article", {
+        title: "Edit article",
+        article,
+        categories
+      });
+    });
+  });
 });
 
 /* GET add_category page. */

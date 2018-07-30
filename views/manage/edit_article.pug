@@ -3,3 +3,28 @@ extends ../layout
 block content
   h1= title
   br
+  form(action=`/articles/edit/${article._id}`, method='post')
+    .form-group
+      label Article title
+      input#article-title.form-control(required='', type='text', name='title', value=`${article.title}`)
+    .form-group
+      label Article description
+      input#article-subtitle.form-control(required='', type='text', name='subtitle', value=`${article.subtitle}`)
+    .form-group
+      label Author
+      input#article-author.form-control(required='', type='text', name='author', value=article.author)
+    .form-group
+      label Category
+      select.form-control(name="category")
+        each category, i in categories
+          if(category._id == article.category)
+            option(value=`${category._id}`, selected) #{category.title}
+          else
+            option(value=`${category._id}`) #{category.title}
+    .form-group
+      label Body
+      textarea#article-body.form-control(required='', type='text', name='body') #{article.body}
+    br
+    button.btn.btn-primary(type='submit') Submit
+    a.btn.btn-outline-secondary(href='/manage/articles') Cancel
+
