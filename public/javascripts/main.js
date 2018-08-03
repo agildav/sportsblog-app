@@ -13,3 +13,19 @@ $(document).ready(() => {
     });
   });
 });
+
+$(document).ready(() => {
+  $(".delete-article").on("click", event => {
+    const id = $(event.target).attr("data-article-id");
+    $.ajax({
+      type: "delete",
+      url: "/articles/delete/" + id,
+      success: res => {
+        window.location.href = "/manage/articles";
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  });
+});

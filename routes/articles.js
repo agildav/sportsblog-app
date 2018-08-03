@@ -36,6 +36,16 @@ router.post("/edit/:id", (req, res, next) => {
   });
 });
 
+/* DELETE remove an article */
+router.delete("/delete/:id", (req, res, next) => {
+  let article_id = { _id: req.params.id };
+
+  Articles.deleteArticles(article_id, (err, article) => {
+    if (err) console.log(err);
+    res.sendStatus(200);
+  });
+});
+
 /* GET article. */
 router.get("/show/:id", (req, res, next) => {
   res.render("articles/article", { title: "Article" });
