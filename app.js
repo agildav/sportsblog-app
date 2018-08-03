@@ -40,6 +40,9 @@ app.use("/categories", categoriesRouter);
 app.use("/manage", manageRouter);
 //  ===        ===
 
+//  Moment.js setup
+app.locals.moment = require("moment");
+
 //  Express-messages
 app.use(require("connect-flash")());
 app.use((req, res, next) => {

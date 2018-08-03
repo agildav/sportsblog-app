@@ -12,12 +12,15 @@ block content
       tr
         th(scope='col') #
         th(scope='col') Article
+        th(scope='col') Author
+        th(scope='col') Created
         th
     tbody
       each article, i in articles
         tr
           th(scope='row') #{i + 1}
           td #{article.title}
+          td #{article.author}
+          td #{moment(article.created_at).format('MMMM Do YYYY, h:mm:ss a')}
           td
             a(href=`/manage/articles/edit/${article._id}` class='btn btn-secondary float-right') Edit
-
