@@ -1,0 +1,21 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand(href='/') Sports Blog
+  button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarTogglerDemo02.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      li(class = title == 'Index page' ? 'active nav-item' : 'nav-item')
+          a.nav-link(href='/') Home 
+            span.sr-only (current)
+      li(class = title == 'Articles' ? 'active nav-item' : 'nav-item')
+        a.nav-link(href='/articles') Articles
+      li(class = title == 'Categories' ? 'active nav-item' : 'nav-item')
+        a.nav-link(href='/categories') Categories
+    ul.navbar-nav
+      li.nav-item.dropdown
+        a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='/manage', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          | Manage
+        .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+          a.dropdown-item(href='/manage/articles') Articles
+          a.dropdown-item(href='/manage/categories') Categories
+

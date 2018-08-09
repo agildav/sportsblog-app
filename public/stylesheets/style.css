@@ -16,26 +16,28 @@ button {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  body {
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 10px;
+  #main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 10px;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  body {
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 25px;
+  #main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 25px;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  body {
-    padding: 70px;
+  #main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 25px;
   }
 
   .float-r {
