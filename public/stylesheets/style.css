@@ -14,32 +14,37 @@ button {
   margin-top: 10px;
 }
 
+#main {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 5rem;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  #main {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 10px;
+  .showcase {
+    background: url("/images/sports-small.jpg") no-repeat 0 100px;
+    max-width: 100%;
+    min-height: 390px;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  #main {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 25px;
+  .showcase {
+    background: url("/images/sports-small.jpg") no-repeat 0 100px;
+    max-width: 100%;
+    min-height: 390px;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  #main {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 25px;
+  .showcase {
+    background: url("/images/sports.jpg") no-repeat 0 -100px;
+    max-width: 100%;
+    min-height: 390px;
   }
-
   .float-r {
     float: right !important;
   }
