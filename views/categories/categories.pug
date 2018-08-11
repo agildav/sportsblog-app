@@ -1,9 +1,12 @@
 extends ../layout
 
 block content
-  h1= title
-  br
-  ul.list-group
-    each category, i in categories
-      li.list-group-item
-        a(href=`/articles/category/${category._id}`) #{category.title}
+  h2= title
+  hr
+  .container
+    .row
+      .col-md-12
+        each category, i in categories
+          a(href=`/articles/category/${category._id}`)
+            h3.category-title #{category.title}
+          br

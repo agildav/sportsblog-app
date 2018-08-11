@@ -32,6 +32,12 @@ module.exports.getArticles = function(callback, limit) {
     .sort([["title", "ascending"]]);
 };
 
+//  getArticles query
+module.exports.getArticlesByCategory = function(id, callback) {
+  let categoryID = { category: id };
+  Articles.find(categoryID, callback).sort([["title", "ascending"]]);
+};
+
 //  findArticleById query
 module.exports.findArticleById = function(id, callback) {
   Articles.findById(id, callback);

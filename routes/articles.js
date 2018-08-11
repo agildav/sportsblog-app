@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Articles = require("../models/article");
+const Categories = require("../models/category");
 
 /* GET articles. */
 router.get("/", (req, res, next) => {
@@ -8,6 +9,11 @@ router.get("/", (req, res, next) => {
     if (err) console.log(err);
     res.render("articles/articles", { title: "Articles", articles });
   });
+});
+
+/* GET article. */
+router.get("/show/:id", (req, res, next) => {
+  res.render("articles/article", { title: "Article" });
 });
 
 /* POST new articles. */
@@ -46,14 +52,16 @@ router.delete("/delete/:id", (req, res, next) => {
   });
 });
 
-/* GET article. */
-router.get("/show/:id", (req, res, next) => {
-  res.render("articles/article", { title: "Article" });
-});
-
 /* GET category articles. */
 router.get("/category/:category_id", (req, res, next) => {
-  res.render("articles/articles", { title: "Category articles" });
+  Articles.getArticlesByCategory(req.params.category_id, (err, articles) => {
+    Categories.findCategoryById(req.params.category_id, (err, category) => {
+      res.render("articles/articles", {
+        title: `${category.title} articles`,
+        articles
+      });
+    });
+  });
 });
 
 module.exports = router;

@@ -5,3 +5,14 @@ block content
     .heading
       h1 Sports Blog
       p.lead A simple blog about sports
+  .container
+    .row
+      .col-md-12
+        each article, i in articles
+          a(href=`/article/show/${article._id}`)
+            h3.article-title #{article.title}
+          h5.article-subtitle #{article.subtitle}
+          p.article-meta.text-muted
+            | Posted by #{article.author}
+            | on #{moment(article.created_at).format('MMM Do YYYY')}
+          br
