@@ -31,7 +31,7 @@ nav {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .showcase {
-    background: url("/images/sports-small.jpg") no-repeat 0 100px;
+    background: url("/images/sports-small.jpg") no-repeat 0 130px;
     max-width: 100%;
     min-height: 390px;
   }
@@ -40,19 +40,14 @@ nav {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .showcase {
-    background: url("/images/sports-small.jpg") no-repeat 0 100px;
-    max-width: 100%;
+    background: url("/images/sports.jpg") no-repeat 0 -80px;
+    width: 100%;
     min-height: 390px;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .showcase {
-    background: url("/images/sports.jpg") no-repeat 0 -100px;
-    max-width: 100%;
-    min-height: 390px;
-  }
   .float-r {
     float: right !important;
   }
