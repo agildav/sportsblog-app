@@ -10,6 +10,22 @@ block content
         p.article-meta.text-muted
           | Posted by #{article.author}
           | on #{moment(article.created_at).format('MMM Do YYYY')}
-        br
         p.lead
           | #{article.body}
+        hr
+        h4 Add comment
+        p
+          form(action=`/articles/comments/add/${article._id}`, method="post")
+            .form-group
+              label(for="Subject") Subject
+              input.form-control(type="text", name="comment_subject")
+            .form-group
+              label(for="Author") Name
+              input.form-control(type="text", name="comment_author")
+            .form-group
+              label(for="Email") Email
+              input.form-control(type="email", name="comment_email")
+            .form-group
+              label(for="Body") Body
+              textarea.form-control(name="comment_body")
+            button.btn.btn-info(type="submit") Add comment
