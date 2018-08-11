@@ -13,7 +13,9 @@ router.get("/", (req, res, next) => {
 
 /* GET article. */
 router.get("/show/:id", (req, res, next) => {
-  res.render("articles/article", { title: "Article" });
+  Articles.findArticleById(req.params.id, (err, article) => {
+    res.render("articles/article", { title: "Article", article });
+  });
 });
 
 /* POST new articles. */

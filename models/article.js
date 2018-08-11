@@ -29,7 +29,7 @@ const Articles = (module.exports = mongoose.model("Article", articleSchema));
 module.exports.getArticles = function(callback, limit) {
   Articles.find(callback)
     .limit(limit)
-    .sort([["title", "ascending"]]);
+    .sort([["created_at", "descending"]]);
 };
 
 //  getArticles query

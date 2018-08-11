@@ -7,7 +7,7 @@ block content
     .row
       .col-md-12
         each article, i in articles
-          a(href=`/article/show/${article._id}`)
+          a(href=`/articles/show/${article._id}`)
             h3.article-title #{article.title}
           h5.article-subtitle #{article.subtitle}
           p.article-meta.text-muted

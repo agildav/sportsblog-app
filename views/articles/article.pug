@@ -1,5 +1,15 @@
 extends ../layout
 
 block content
-  h2= title
+  h2= article.title
   br
+  .container
+    .row
+      .col-md-12
+        h5.article-subtitle #{article.subtitle}
+        p.article-meta.text-muted
+          | Posted by #{article.author}
+          | on #{moment(article.created_at).format('MMM Do YYYY')}
+        br
+        p.lead
+          | #{article.body}
