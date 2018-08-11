@@ -29,7 +29,7 @@ router.get("/categories", (req, res, next) => {
 router.get("/articles/add", (req, res, next) => {
   Categories.getCategories((err, categories) => {
     if (err) console.log(err);
-    res.render("manage/add_article", { title: "Create articles", categories });
+    res.render("manage/add_article", { title: "Create article", categories });
   });
 });
 
@@ -52,7 +52,7 @@ router.get("/articles/edit/:id", (req, res, next) => {
 
 /* GET add_category page. */
 router.get("/categories/add", (req, res, next) => {
-  res.render("manage/add_category", { title: "Create categories" });
+  res.render("manage/add_category", { title: "Create category" });
 });
 
 /* GET edit_category page. */
