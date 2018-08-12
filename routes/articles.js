@@ -66,4 +66,14 @@ router.get("/category/:category_id", (req, res, next) => {
   });
 });
 
+/* POST article comments */
+router.post("/comments/add/:id", (req, res, next) => {
+  let id = { _id: req.params.id };
+  let comment = req.body;
+  Articles.addComment(id, comment, (err, articles) => {
+    if (err) res.send(err);
+    res.redirect(`/articles/show/${req.params.id}`);
+  });
+});
+
 module.exports = router;

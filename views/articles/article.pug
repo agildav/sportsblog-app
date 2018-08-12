@@ -18,14 +18,14 @@ block content
           form(action=`/articles/comments/add/${article._id}`, method="post")
             .form-group
               label(for="Subject") Subject
-              input.form-control(type="text", name="comment_subject")
+              input.form-control(type="text", name="comment_subject", required)
             .form-group
               label(for="Author") Name
-              input.form-control(type="text", name="comment_author")
+              input.form-control(type="text", name="comment_author", required)
             .form-group
               label(for="Email") Email
-              input.form-control(type="email", name="comment_email")
+              input.form-control(type="email", name="comment_email", required)
             .form-group
               label(for="Body") Body
-              textarea.form-control(name="comment_body")
+              textarea.form-control(name="comment_body", required)
             button.btn.btn-info(type="submit") Add comment

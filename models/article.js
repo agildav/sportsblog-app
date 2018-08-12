@@ -62,3 +62,8 @@ module.exports.editArticles = function(
 module.exports.deleteArticles = function(article, callback) {
   Articles.remove(article, callback);
 };
+
+//  addComment method
+module.exports.addComment = function(query, comment, callback) {
+  Articles.update(query, { $push: { comments: comment } }, callback);
+};
