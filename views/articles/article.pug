@@ -1,6 +1,7 @@
 extends ../layout
 
 block content
+  br
   h2= article.title
   br
   .container
@@ -13,6 +14,17 @@ block content
         p.lead
           | #{article.body}
         hr
+        br
+        h4 Comments
+        each comment, i in article.comments
+          .card
+            .card-body
+              blockquote.blockquote.mb-0
+                p
+                  | #{comment.comment_body}
+                footer.blockquote-footer
+                  | #{comment.comment_author}
+        br
         h4 Add comment
         p
           form(action=`/articles/comments/add/${article._id}`, method="post")

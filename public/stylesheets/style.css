@@ -1,5 +1,6 @@
 body {
   font-size: large;
+  background-color: #faf8f8;
 }
 
 a {
@@ -28,6 +29,9 @@ nav {
   font-size: x-large;
 }
 
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top {
+  padding-bottom: 17px;
+}
 .navbar-brand {
   font-size: 2rem;
 }
@@ -36,6 +40,7 @@ nav {
 @media only screen and (max-width: 600px) {
   .showcase {
     background: url("/images/sports-small.jpg") no-repeat 0 130px;
+    border-radius: 40%;
     max-width: 100%;
     min-height: 390px;
   }
@@ -45,6 +50,7 @@ nav {
 @media only screen and (min-width: 600px) {
   .showcase {
     background: url("/images/sports.jpg") no-repeat 0 -80px;
+    border-radius: 40%;
     width: 100%;
     min-height: 390px;
   }
