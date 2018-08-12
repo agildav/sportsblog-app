@@ -6,7 +6,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 
 //  Mongoose setup
-const mongoURL = "mongodb://localhost:27017/sports-blog";
+const mongoURL = process.env.mlab_uri;
 mongoose.connect(
   mongoURL,
   { useNewUrlParser: true }
